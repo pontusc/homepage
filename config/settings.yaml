@@ -6,7 +6,7 @@ cardBlur: md
 theme: dark
 language: en
 disableCollapse: true
-color: indigo
+color: slate
 
 layout:
   Cluster Management:
