@@ -40,3 +40,9 @@
       siteMonitor: https://grafana.local.nejlikka.com
       icon: grafana.png
       description: Reports & Alerts
+
+  - Authentik:
+      href: https://authentik.local.nejlikka.com
+      siteMonitor: https://authentik.local.nejlikka.com
+      icon: authentik.png
+      description: Authentication
