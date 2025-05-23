@@ -6,11 +6,12 @@ cardBlur: md
 theme: dark
 language: en
 disableCollapse: true
+color: indigo
 
 layout:
   Cluster Management:
     icon: kubernetes.png
-    useEqualHeights: true
+    useEqualHeights: false
     style: row
     columns: 2
   Deployments:

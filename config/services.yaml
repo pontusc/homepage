@@ -4,18 +4,9 @@
       siteMonitor: https://traefik.local.nejlikka.com
       icon: traefik.png
       description: Ingress
-      widget:
-        type: traefik
-        url: https://traefik.local.nejlikka.com
-
-  - Prometheus:
-      href: https://prometheus.local.nejlikka.com
-      siteMonitor: https://prometheus.local.nejlikka.com
-      icon: prometheus.png
-      description: Cluster logs
-      widget:
-        type: prometheus
-        url: https://prometheus.local.nejlikka.com
+      # widget:
+      #   type: traefik
+      #   url: http://traefik.kube-system.svc.cluster.local:8080
 
   - ArgoCD:
       href: https://argocd.local.nejlikka.com
@@ -46,3 +37,12 @@
       siteMonitor: https://authentik.local.nejlikka.com
       icon: authentik.png
       description: Authentication
+
+  - Prometheus:
+      href: https://prometheus.local.nejlikka.com
+      siteMonitor: http://prometheus-server.monitoring.svc.cluster.local
+      icon: prometheus.png
+      description: Cluster logs
+      widget:
+        type: prometheus
+        url: http://prometheus-server.monitoring.svc.cluster.local
