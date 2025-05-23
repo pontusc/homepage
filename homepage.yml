@@ -111,11 +111,11 @@ metadata:
   annotations:
     # cert-manager.io/cluster-issuer: cloudflare-le-issuer
     traefik.ingress.kubernetes.io/router.entrypoints: web, websecure
-    traefik.ingress.kubernetes.io/router.middlewares: traefik-redirect-https@kubernetescrd
+    # traefik.ingress.kubernetes.io/router.middlewares: traefik-redirect-https@kubernetescrd
 spec:
   ingressClassName: traefik
   rules:
-  - host: homepage.local.nejlikka.com
+  - host: nejlikka.com
     http:
       paths:
       - path: /
@@ -125,10 +125,16 @@ spec:
             name: homepage
             port:
               number: 3000
-              # tls:
-              # - secretName: homepage-cert
-              #   hosts:
-              #   - homepage.local.nejlikka.com
+  - host: www.nejlikka.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: homepage
+            port:
+              number: 3000
 
 ---
 apiVersion: apps/v1
@@ -161,7 +167,7 @@ spec:
         imagePullPolicy: Always
         env:
         - name: HOMEPAGE_ALLOWED_HOSTS
-          value: homepage.local.nejlikka.com # required, may need port
+          value: nejlikka.com # required, may need port
         ports:
         - name: http
           containerPort: 3000
