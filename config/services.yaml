@@ -1,7 +1,7 @@
 - Cluster Management:
   - Traefik:
-      href: https://traefik.local.nejlikka.com
-      siteMonitor: https://traefik.local.nejlikka.com
+      href: https://traefik.nejlikka.com
+      siteMonitor: https://traefik.nejlikka.com
       icon: traefik.png
       description: Ingress
       # widget:
@@ -9,37 +9,37 @@
       #   url: http://traefik.kube-system.svc.cluster.local:8080
 
   - ArgoCD:
-      href: https://argocd.local.nejlikka.com
-      siteMonitor: https://argocd.local.nejlikka.com
+      href: https://argocd.nejlikka.com
+      siteMonitor: https://argocd.nejlikka.com
       icon: argo-cd.png
       description: Kubernetes GitOps
 
   - Rancher:
-      href: https://rancher.local.nejlikka.com
-      siteMonitor: https://grafana.local.nejlikka.com
+      href: https://rancher.nejlikka.com
+      siteMonitor: https://rancher.nejlikka.com
       icon: rancher.png
       description: Kubernetes management
 
   - Longhorn:
-      href: https://longhorn.local.nejlikka.com
-      siteMonitor: https://longhorn.local.nejlikka.com
+      href: https://longhorn.nejlikka.com
+      siteMonitor: https://longhorn.nejlikka.com
       icon: longhorn.png
       description: CSI Provider
 
   - Grafana:
-      href: https://grafana.local.nejlikka.com
-      siteMonitor: https://grafana.local.nejlikka.com
+      href: https://grafana.nejlikka.com
+      siteMonitor: https://grafana.nejlikka.com
       icon: grafana.png
       description: Reports & Alerts
 
   - Authentik:
-      href: https://authentik.local.nejlikka.com
-      siteMonitor: https://authentik.local.nejlikka.com
+      href: https://authentik.nejlikka.com
+      siteMonitor: https://authentik.nejlikka.com
       icon: authentik.png
       description: Authentication
 
   - Prometheus:
-      href: https://prometheus.local.nejlikka.com
+      href: https://prometheus.nejlikka.com
       siteMonitor: http://prometheus-server.monitoring.svc.cluster.local
       icon: prometheus.png
       description: Cluster logs
