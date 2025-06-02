@@ -17,12 +17,12 @@
     cpu: true
     memory: true
     uptime: true
-    network: default
+    network: false
 # - longhorn:
 #     expanded: true
 #     total: true
 #     labels: true
-#     nodes: true
+#     nodes: false
 
 - openmeteo:
     label: Stockholm # optional

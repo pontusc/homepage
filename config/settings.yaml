@@ -11,7 +11,7 @@ color: slate
 layout:
   Cluster Management:
     icon: kubernetes.png
-    useEqualHeights: false
+    useEqualHeights: true
     style: row
     columns: 2
   Deployments:
