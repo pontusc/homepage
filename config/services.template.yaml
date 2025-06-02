@@ -48,6 +48,16 @@
         url: http://authentik-server.authentik.svc.cluster.local
         key: $AUTHENTIK_API_KEY
 
+  - Uptime-kuma:
+      href: https:///kuma.nejlikka.com
+      siteMonitor: http://uptime-kuma.monitoring.svc.cluster.local:3001
+      icon: uptime-kuma.png
+      description: Service monitoring
+      widget:
+        type: uptimekuma
+        url: http://uptime-kuma.monitoring.svc.cluster.local:3001
+        slug: services
+
   - Longhorn:
       href: https://longhorn.nejlikka.com
       siteMonitor: http://longhorn-frontend.longhorn-system.svc.cluster.local
