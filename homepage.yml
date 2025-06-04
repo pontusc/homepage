@@ -110,22 +110,12 @@ metadata:
     app.kubernetes.io/name: homepage
   annotations:
     # cert-manager.io/cluster-issuer: cloudflare-le-issuer
-    traefik.ingress.kubernetes.io/router.entrypoints: web, websecure
     # traefik.ingress.kubernetes.io/router.middlewares: traefik-redirect-https@kubernetescrd
+    traefik.ingress.kubernetes.io/router.entrypoints: web, websecure
 spec:
   ingressClassName: traefik
   rules:
   - host: nejlikka.com
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: homepage
-            port:
-              number: 3000
-  - host: www.nejlikka.com
     http:
       paths:
       - path: /
