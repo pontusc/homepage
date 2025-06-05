@@ -34,7 +34,9 @@ jobs:
       run: |
         kubectl create configmap homepage-config \
         --from-file=homepage/config/ \
-        --dry-run=client -o yaml > homepage/homepage-configmap.yml
+        --dry-run='.metadata.namespace = "homepage"client -o yaml | \
+        yq eval '.metadata.namespace = "homepage" \
+        > homepage/homepage-configmap.yml
 
     - name: Copy files
       run: |
