@@ -36,15 +36,6 @@ jobs:
         --from-file=homepage/config/ \
         --dry-run=client -o yaml > homepage/homepage-configmap.yml
 
-        # for file in homepage/config/*; do
-        #   # Remove path and suffix/filetype
-        #   echo $file
-        #   filename=$(basename "$file")
-        #   filename=${filename%.*}
-        #   kubectl create configmap "$filename" --from-file="$file" \
-        #   --dry-run=client -o yaml > homepage/"$filename".yml
-        # done
-
     - name: Copy files
       run: |
         cp homepage/*.yml $APP_PATH
