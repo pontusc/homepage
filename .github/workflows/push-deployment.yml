@@ -8,6 +8,8 @@ name: Push manifests
 jobs:
   push:
     runs-on: ubuntu-latest
+    env:
+      APP_PATH: homelab/apps/homepage
     steps:
     - name: Kubectl tool installer
       uses: Azure/setup-kubectl@vv4.0.0
@@ -27,18 +29,25 @@ jobs:
 
     - name: Generate manifests
       run: |
-        kubectl create configmap test-config --from-file=homepage/config/services.yaml \
-        --dry-run=client -o yaml > test-config.yml
-        cat test-config.yml
+        for file in homepage/config/*; do
+          # Remove suffix/filetype
+          filename=${file%.*}
+          kubectl create configmap "$filename" --from-file=homepage/config/"$file" \
+          --dry-run=client -o yaml > homepage/"$filename".yml
+        fi
 
     - name: Copy files
       run: |
-        echo "Copying"
+        cp homepage/*.yml $APP_PATH
 
     - name: Commit files
       run: |
-        echo "Committing"
+        git config --local user.name 'github-actions[bot]'
+        git config --local user.email 'github-actions[bot]@users.noreply.github.com'
+        git commit -a -m "Push new manifests for homepage"
 
     - name: Push
-      run: |
-        echo "Push"
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{secrets.PAT_TOKEN}}
+        repository: pontusc/homelab
