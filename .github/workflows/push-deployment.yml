@@ -9,16 +9,27 @@ jobs:
   push:
     runs-on: ubuntu-latest
     steps:
+    - name: Kubectl tool installer
+      uses: Azure/setup-kubectl@vv4.0.0
+
     - name: Checkout homepage repo
       uses: actions/checkout@v4
       with:
+        token: ${{secrets.PAT_TOKEN}}
         path: homepage
 
     - name: Checkout homelab repo
       uses: actions/checkout@v4
       with:
+        repository: pontusc/homelab
         token: ${{secrets.PAT_TOKEN}}
         path: homelab
+
+    - name: Generate manifests
+      run: |
+        kubectl create configmap test-config --from-file=homepage/config/services.yaml \
+        --dry-run=client -o yaml > test-config.yml
+        cat test-config.yml
 
     - name: Copy files
       run: |
