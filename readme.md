@@ -6,3 +6,6 @@ For icons see [dashboardicons.com](https://dashboardicons.com/).
 ## Autodiscovery
 See [this](https://gethomepage.dev/configs/kubernetes/) for information. Separate annotation requirements for Ingress objects vs traefiks IngressRoute objects.\
 Decided to not use this, except for actual deployments. Cluster services are specifically added.
+
+## Secret
+Read sealed-secret documentation and use kubeseal cli to generate the sealed-secret.
