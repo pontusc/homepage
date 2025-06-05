@@ -34,7 +34,7 @@ jobs:
       run: |
         kubectl create configmap homepage-config \
         --from-file=homepage/config/ \
-        --dry-run=client -o yaml | > homepage/homepage-configmap.yml
+        --dry-run=client -o yaml > homepage/homepage-configmap.yml
 
         # for file in homepage/config/*; do
         #   # Remove path and suffix/filetype
