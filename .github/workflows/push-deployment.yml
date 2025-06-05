@@ -47,7 +47,7 @@ jobs:
 
     - name: Commit files
       run: |
-        cd $APP_PATH
+        cd homelab
         git config --local user.name 'github-actions[bot]'
         git config --local user.email 'github-actions[bot]@users.noreply.github.com'
         git add .
