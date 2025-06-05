@@ -34,7 +34,7 @@ jobs:
           filename=${file%.*}
           kubectl create configmap "$filename" --from-file=homepage/config/"$file" \
           --dry-run=client -o yaml > homepage/"$filename".yml
-        fi
+        done
 
     - name: Copy files
       run: |
