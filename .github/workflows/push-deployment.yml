@@ -56,5 +56,6 @@ jobs:
     - name: Push
       uses: ad-m/github-push-action@master
       with:
+        directory: homelab
         github_token: ${{secrets.PAT_TOKEN}}
         repository: pontusc/homelab
