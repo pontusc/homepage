@@ -25,7 +25,7 @@
       widget:
         type: argocd
         url: http://argocd-server.argocd.svc.cluster.local:80
-        key: $ARGOCD_API_KEY
+        key: "{{HOMEPAGE_VAR_ARGO_API_KEY}}"
 
   - Grafana:
       href: https://grafana.nejlikka.com
@@ -35,8 +35,8 @@
       widget:
         type: grafana
         url: http://grafana.monitoring.svc.cluster.local
-        username: $GRAFANA_USER
-        password: $GRAFANA_PASSWORD
+        username: homepage_user
+        password: "{{HOMEPAGE_VAR_GRAFANA_PASSWORD}}"
 
   - Authentik:
       href: https://authentik.nejlikka.com
@@ -46,7 +46,7 @@
       widget:
         type: authentik
         url: http://authentik-server.authentik.svc.cluster.local
-        key: $AUTHENTIK_API_KEY
+        key: "{{HOMEPAGE_VAR_AUTHENTIK_API_KEY}}"
 
   - Uptime-kuma:
       href: https:///kuma.nejlikka.com
