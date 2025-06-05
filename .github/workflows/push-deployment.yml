@@ -27,11 +27,16 @@ jobs:
         token: ${{secrets.PAT_TOKEN}}
         path: homelab
 
+    - name: Test filestructure
+      run: ls
+
     - name: Generate manifests
       run: |
         for file in homepage/config/*; do
-          # Remove suffix/filetype
-          filename=${file%.*}
+          # Remove path and suffix/filetype
+          echo $file
+          filename=$(basename "$file")
+          filename=${filename%.*}
           kubectl create configmap "$filename" --from-file=homepage/config/"$file" \
           --dry-run=client -o yaml > homepage/"$filename".yml
         done
