@@ -1,0 +1,33 @@
+name: Push manifests
+
+"on":
+  push:
+    branches:
+    - main
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout homepage repo
+      uses: actions/checkout@v4
+      with:
+        path: homepage
+
+    - name: Checkout homelab repo
+      uses: actions/checkout@v4
+      with:
+        token: ${{secrets.PAT_TOKEN}}
+        path: homelab
+
+    - name: Copy files
+      run: |
+        echo "Copying"
+
+    - name: Commit files
+      run: |
+        echo "Committing"
+
+    - name: Push
+      run: |
+        echo "Push"
