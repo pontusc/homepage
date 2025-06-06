@@ -36,7 +36,7 @@
         type: grafana
         url: http://grafana.monitoring.svc.cluster.local:80
         username: admin
-        password: "{{HOMEPAGE_VAR_GRAFANA_PASSWORD}}"
+        password: {{HOMEPAGE_VAR_GRAFANA_PASSWORD}}
 
   - Authentik:
       href: https://authentik.nejlikka.com
