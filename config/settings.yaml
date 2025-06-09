@@ -23,3 +23,7 @@ layout:
     style: row
     columns: 6
     useEqualHeights: true
+
+providers:
+  longhorn:
+    url: http://longhorn-frontend.longhorn-system.svc.cluster.local
