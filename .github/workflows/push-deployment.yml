@@ -9,7 +9,7 @@ jobs:
   push:
     runs-on: ubuntu-latest
     env:
-      APP_PATH: homelab/apps/homepage
+      APP_PATH: homelab/deployments/homepage
     steps:
     - name: Kubectl tool installer
       uses: Azure/setup-kubectl@vv4.0.0
